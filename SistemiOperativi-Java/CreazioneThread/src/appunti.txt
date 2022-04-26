@@ -1,0 +1,43 @@
+// stoppare un thread in maniera corretta:
+/*uso di volatile:*/
+
+private volatile Thread blinker;
+
+public void start()
+{
+	blinker = new Thread(this);
+	blinker.start();
+}
+
+// metodo stop
+public void stop()
+{
+	blinker=null;	
+}
+
+
+/* Variabile di tipo volatile: permette di avere la certezza che il valore di tale variabile
+non venga mai messo a cash localmente al singolo Thread, quindi tutte le letture/scritture arrivano
+alla main memory, ossia a quella relativa al processo (JVM) in modo generale.
+Inoltre, l'accesso alla variabile è inteso come blocco atomico: thread diversi che accedono
+alla stessa variabile per leggere/modificarla compiono azioni di lettura/scrittura in modo
+atomico rispetto ad altri Thread */
+
+public boolean isDone()
+{
+	return blinker = null;
+}
+
+public void run()
+{
+	while( !isDone() )
+	{
+		try
+		{
+			Thread.sleep(interval);
+		}
+		catch(InterruptedException e)
+		{ }
+		repaint();
+	} //fine while 
+} //fine metodo run

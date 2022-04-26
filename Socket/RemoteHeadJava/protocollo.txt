@@ -1,0 +1,16 @@
+Client                                                      Server
+        --------> file_name (string UTF-8 terminata da '\n')
+
+        <------- riga 1 file (UTF-8)
+        <------- riga 2 file
+        <------- riga 3 file
+        <------- riga 4 file
+
+        X------- close
+Essendoci un terminatore \n posso chiamare la readline lato Server
+L'assunzione è che nel nome del file non possa essere contenuto il '\n'
+E posso usare questo '\n' come terminatore per permettere al Server con una sola readline
+di raccogliere tutte quest'informazione che ha una dimensione variabile (non so a priori quanto può essere
+grande il nome del file, allora leggo tutti i byte fino al terminatore '\n' )
+Il Server processerà questa informazione, aprirà il file se disponibile e manderà le prime 5
+righe al Client e poi chiuderà la connessione

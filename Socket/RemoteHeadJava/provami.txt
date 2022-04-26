@@ -1,0 +1,8 @@
+ciao, sono il file di prova per questo
+primo semplicissimo esercizio di ripasso
+e di comprensione di java e delle socket
+lorem ipsum sit amen prova 1 2 3 4 5 ciao
+Università degli Studi di Ferrara 12345
+Linguaggi di programmazione c# java python ruby PHP C++
+ulteriore prova ciao ancora prova 543210-1-2-3
+ottava riga di prova
